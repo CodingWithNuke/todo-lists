@@ -29,7 +29,7 @@ export default createStore({
 
       todo.completed = !todo.completed
     },
-    REMOVE_TODO(state, id) {
+    DELETE_TODO(state, id) {
       state.todos = state.todos.filter(todo => todo.id != id);
     }
   },
@@ -40,8 +40,8 @@ export default createStore({
     completeTodo({ commit }, id) {
       commit('COMPLETE_TODO', id);
     },
-    removeTodo({ commit }, id) {
-      commit('REMOVE_TODO', id);
+    deleteTodo({ commit }, id) {
+      commit('DELETE_TODO', id);
     }
   },
   getters: {
