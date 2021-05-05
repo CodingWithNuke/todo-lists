@@ -3,7 +3,7 @@
     <label class="flex-fill">
       <input
         :checked="todo.completed"
-        @input="completeTodo"
+        @change="completeTodo"
         class="form-check-input me-1"
         type="checkbox"
       />
