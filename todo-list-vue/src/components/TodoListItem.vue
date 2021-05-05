@@ -2,7 +2,8 @@
   <li class="list-group-item d-flex align-items-center">
     <label class="flex-fill">
       <input
-        v-model="completed"
+        :checked="todo.completed"
+        @input="completeTodo"
         class="form-check-input me-1"
         type="checkbox"
       />
@@ -13,7 +14,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, computed } from "vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "TodoListItem",
@@ -23,13 +24,6 @@ export default defineComponent({
   },
 
   setup(props, { emit }) {
-    const completed = computed({
-      get: () => props.todo.completed,
-      set: () => {
-        emit("completeTodo", props.todo.id);
-      },
-    });
-
     function deleteTodo() {
       emit("deleteTodo", props.todo.id);
     }
@@ -41,11 +35,7 @@ export default defineComponent({
     return {
       deleteTodo,
       completeTodo,
-      completed,
     };
   },
 });
 </script>
-
-<style>
-</style>
