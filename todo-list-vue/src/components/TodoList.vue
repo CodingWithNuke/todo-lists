@@ -1,17 +1,21 @@
 <template>
   <ul class="list-group">
-    <TodoListItem
-      v-for="todo in todos"
-      :key="todo.id"
-      :todo="todo"
-      @deleteTodo="onDeleteTodo"
-      @completeTodo="onCompleteTodo"
-    />
+    <template v-if="todos.length">
+      <TodoListItem
+        v-for="todo in todos"
+        :key="todo.id"
+        :todo="todo"
+        @deleteTodo="deleteTodo"
+        @completeTodo="completeTodo"
+      />
+    </template>
+    <i v-else>No todos to display</i>
   </ul>
 </template>
 
 <script>
-import { computed, defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
+import { useStore } from "vuex";
 
 import TodoListItem from "./TodoListItem.vue";
 
@@ -22,29 +26,24 @@ export default defineComponent({
     TodoListItem,
   },
 
-  props: {
-    todos: Array,
-  },
+  setup() {
+    const store = useStore();
 
-  setup(props, { emit }) {
-    const todos = computed(() => props.todos);
+    const todos = computed(() => store.getters["todos"]);
 
-    function onDeleteTodo(id) {
-      emit("deleteTodo", id);
+    function deleteTodo(id) {
+      store.dispatch("deleteTodo", id);
     }
 
-    function onCompleteTodo(id) {
-      emit("completeTodo", id);
+    function completeTodo(id) {
+      store.dispatch("completeTodo", id);
     }
 
     return {
       todos,
-      onDeleteTodo,
-      onCompleteTodo,
+      deleteTodo,
+      completeTodo,
     };
   },
 });
 </script>
-
-<style>
-</style>
