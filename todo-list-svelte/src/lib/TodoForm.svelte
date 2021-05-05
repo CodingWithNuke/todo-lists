@@ -4,6 +4,8 @@
   let newTodo = "";
 
   function addNewTodo() {
+    if (!newTodo.trim().length) return;
+
     todos.update((todos) => {
       return [...todos, { id: todos.length, title: newTodo, completed: false }];
     });

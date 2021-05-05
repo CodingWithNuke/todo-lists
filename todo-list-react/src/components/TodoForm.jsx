@@ -12,6 +12,8 @@ const TodoForm = () => {
   }
 
   const addNewTodo = (e) => {
+    if (!newTodo.trim().length) return;
+
     e.preventDefault();
 
     setTodos([...todos, { id: todos.length, title: newTodo, completed: false }]);

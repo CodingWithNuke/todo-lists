@@ -25,6 +25,8 @@ export default defineComponent({
     const newTodo = ref("");
 
     function addNewTodo() {
+      if (!newTodo.value.trim().length) return;
+
       store.dispatch("addTodo", {
         id: store.state.todos.length,
         title: newTodo.value,

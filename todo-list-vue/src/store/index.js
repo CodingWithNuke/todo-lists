@@ -11,7 +11,7 @@ export default createStore({
       {
         id: 1,
         title: "Make a Todo List in React",
-        completed: false,
+        completed: true,
       },
       {
         id: 2,
