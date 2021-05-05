@@ -9,16 +9,11 @@ export const todos = writable([
   {
     id: 1,
     title: "Make a Todo List in React",
-    completed: false,
+    completed: true,
   },
   {
     id: 2,
     title: "Make a Todo List in Svelte",
-    completed: false,
+    completed: true,
   },
-  {
-    id: 3,
-    title: "Make a Todo List in Angular",
-    completed: false,
-  }
 ]);

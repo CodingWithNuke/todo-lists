@@ -17,13 +17,8 @@ export const TodoProvider = (props) => {
     {
       id: 2,
       title: "Make a Todo List in Svelte",
-      completed: false,
+      completed: true,
     },
-    {
-      id: 3,
-      title: "Make a Todo List in Angular",
-      completed: false,
-    }
   ])
 
   return (
