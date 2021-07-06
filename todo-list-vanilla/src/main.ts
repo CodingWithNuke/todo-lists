@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const newTodoForm: HTMLFormElement = document.querySelector("#newTodoForm")!;
-const todoList: HTMLDivElement = document.querySelector("#todoList")!;
+const todoList: HTMLUListElement = document.querySelector("#todoList")!;
 
 newTodoForm.addEventListener("submit", (e) => {
   e.preventDefault();
