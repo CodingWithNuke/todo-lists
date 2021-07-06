@@ -1,21 +1,16 @@
 <template>
-  <div class="container py-4">
-    <TodoForm />
-    <TodoList />
-  </div>
+  <TodoList />
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 
-import TodoForm from "./components/TodoForm.vue";
 import TodoList from "./components/TodoList.vue";
 
 export default defineComponent({
   name: "App",
 
   components: {
-    TodoForm,
     TodoList,
   },
 });

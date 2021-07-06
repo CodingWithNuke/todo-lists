@@ -1,9 +1,5 @@
-<script>
-  import TodoForm from "./lib/TodoForm.svelte";
+<script lang="ts">
   import TodoList from "./lib/TodoList.svelte";
 </script>
 
-<div class="container py-4">
-  <TodoForm />
-  <TodoList />
-</div>
+<TodoList />
