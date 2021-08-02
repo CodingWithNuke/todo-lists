@@ -1,6 +1,6 @@
 # todo-lists
 
-This repository is full of todo list folders. Each folder contains a todo list using the named framework/libary.
+This repository is full of todo list folders. Each folder contains a todo list using the named framework/library.
 
 ## Progress
 
