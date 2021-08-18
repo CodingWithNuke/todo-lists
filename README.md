@@ -9,3 +9,4 @@ This repository is full of todo list folders. Each folder contains a todo list u
 - [x] Todo list made in React
 - [x] Todo list made in Svelte
 - [x] Todo list made in Angular
+- [x] Todo list made in Solid
