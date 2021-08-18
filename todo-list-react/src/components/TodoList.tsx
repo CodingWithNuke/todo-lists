@@ -28,7 +28,6 @@ const TodoList = () => {
     e.preventDefault();
 
     if (newTodo.trim().length) {
-
       setTodos([
         ...todos,
         { _id: todos.length, text: newTodo, completed: false },
@@ -41,7 +40,12 @@ const TodoList = () => {
     <div className="container p-4">
       <form onSubmit={onSubmitAddNewTodo}>
         <label className="form-label"> New Todo </label>
-        <input type="text" className="form-control" value={newTodo} onInput={(e) => setNewTodo(e.currentTarget.value)} />
+        <input
+          type="text"
+          className="form-control"
+          value={newTodo}
+          onInput={(e) => setNewTodo(e.currentTarget.value)}
+        />
         <button type="submit" className="btn btn-primary mt-2">
           Add Todo
         </button>
